@@ -6,7 +6,7 @@ from database import create_database
 import google.generativeai as genai
 
 try:
-    genai.configure(api_key="AIzaSyB6oaF1sHo6fZi_0DQ2aHb0dUg74JLJVaQ") 
+    genai.configure(api_key="Your_Gemini_API_Key") 
 except Exception as e:
     print(f"Error configuring Gemini API: {e}")
 
@@ -323,4 +323,5 @@ if __name__ == '__main__':
         create_database()
         print("Database created successfully.")
     app.run(debug=True)
+
 
