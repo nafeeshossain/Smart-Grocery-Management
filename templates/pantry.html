@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pantry - Smart Grocery Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="logo-sidebar">Smart Grocer</div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-item">Dashboard</a>
+            <a href="{{ url_for('pantry') }}" class="nav-item active">My Pantry</a>
+            <a href="{{ url_for('shopping_list') }}" class="nav-item">Shopping Lists</a>
+            <a href="{{ url_for('community') }}" class="nav-item">Community</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('profile') }}" class="nav-item">Profile</a>
+            <a href="{{ url_for('logout') }}" class="nav-item">Logout</a>
+        </div>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <h2>My Pantry</h2>
+            <p>Keep track of all the ingredients you have at home.</p>
+        </header>
+
+        <!-- Add Item Form -->
+        <div class="grid-card add-item-form">
+            <h3>Add New Item to Pantry</h3>
+            <form id="add-pantry-item-form" class="item-form">
+                <input type="text" id="pantry-item-name" placeholder="Item Name (e.g., Flour)" required>
+                <input type="text" id="pantry-item-quantity" placeholder="Quantity (e.g., 500g)">
+                <input type="date" id="pantry-item-expiry" placeholder="Expiry Date">
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+
+        <!-- Pantry List -->
+        <div class="grid-card">
+            <h3>Current Pantry Items</h3>
+            <ul class="item-list" id="pantry-item-list">
+                <!-- Items will be dynamically inserted here by pantry.js -->
+            </ul>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/pantry.js') }}"></script>
+</body>
+</html>

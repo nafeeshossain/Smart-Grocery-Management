@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Lists - Smart Grocery Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="logo-sidebar">Smart Grocer</div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-item">Dashboard</a>
+            <a href="{{ url_for('pantry') }}" class="nav-item">My Pantry</a>
+            <a href="{{ url_for('shopping_list') }}" class="nav-item active">Shopping Lists</a>
+            <a href="{{ url_for('community') }}" class="nav-item">Community</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('profile') }}" class="nav-item">Profile</a>
+            <a href="{{ url_for('logout') }}" class="nav-item">Logout</a>
+        </div>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <h2>My Shopping List</h2>
+            <p>Manage items you need to buy on your next grocery run.</p>
+        </header>
+
+        <!-- Add Item Form -->
+        <div class="grid-card add-item-form">
+            <h3>Add to Shopping List</h3>
+            <form id="add-shopping-item-form" class="item-form">
+                <input type="text" id="shopping-item-name" placeholder="Item Name (e.g., Milk)" required>
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+
+        <!-- Shopping List -->
+        <div class="grid-card">
+            <h3>Items to Buy</h3>
+            <ul class="item-list" id="shopping-item-list">
+                <!-- Items will be dynamically inserted here by shopping_list.js -->
+            </ul>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/shopping_list.js') }}"></script>
+</body>
+</html>

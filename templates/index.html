@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">Smart Grocery Manager</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="{{ url_for('login') }}" class="btn btn-secondary">Login</a>
+                <a href="{{ url_for('signup') }}" class="btn btn-primary">Sign Up Free</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Future of Your Kitchen is Here.</h1>
+                <p class="subtitle">Intelligently manage your groceries, reduce waste, and discover amazing recipes with the power of AI.</p>
+                <a href="{{ url_for('signup') }}" class="btn btn-primary btn-large">Get Started for Free</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Why You'll Love Smart Grocer</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🤖</div>
+                        <h3>AI Recipe Genius</h3>
+                        <p>Tell our AI what ingredients you have, and get instant, creative recipes. Never wonder "what's for dinner?" again.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🗑️</div>
+                        <h3>Reduce Food Waste</h3>
+                        <p>Track expiry dates and get smart reminders. Our AI suggests recipes for items about to expire, saving you money.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🧑‍🤝‍🧑</div>
+                        <h3>Community Kitchen</h3>
+                        <p>Share your own recipes, discover meal plans from other users, and exchange tips in a vibrant community of food lovers.</p>
+                    </div>
+                     <div class="feature-card">
+                        <div class="icon">🛒</div>
+                        <h3>Smart Shopping Lists</h3>
+                        <p>Automatically add recipe ingredients to your list. Organize your shopping trips and never forget an item.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>Simple Steps to a Smarter Kitchen</h2>
+                 <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Log Your Pantry</h3>
+                        <p>Quickly add items you have at home. The more you add, the smarter our recommendations get.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Ask the AI</h3>
+                        <p>Use our Gemini-powered chat to ask for recipes, meal plans, or cooking tips based on your pantry.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Cook & Enjoy</h3>
+                        <p>Follow the generated recipes and enjoy delicious meals, all while reducing waste and saving money.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Creative TechTians. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
